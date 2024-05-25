@@ -45,6 +45,11 @@ void showTheTable(QueueMatch *Matches, QueueMatch *win, QueueMatch *contestHisto
 void RestoreData(QueueMatch *win, QueueMatch **Matches);
 Graph *generateTheGraph(QueueMatch *Matches, char *output_1, QueueMatch *contestHistory);
 
+//task2
+float theCalculation(int nrVictory);
+void calculateThePrestige(Graph *theContest, QueueMatch *contestHistory);
+void showThePrestige(QueueMatch *contestHistory, char *output_2);
+
 #ifndef TEMA_LAN_PARTY_GRAPHS_LAN_PARTY_GRAPH_HEADER_H
 #define TEMA_LAN_PARTY_GRAPHS_LAN_PARTY_GRAPH_HEADER_H
 

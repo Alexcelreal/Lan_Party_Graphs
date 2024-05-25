@@ -21,5 +21,13 @@ int main(int argc, char *argv[]){
     Graph *theContest= generateTheGraph(theMatches,output_1,theContestHistory);
 
     //task 2
+    calculateThePrestige(theContest,theContestHistory);
+    showThePrestige(theContestHistory,output_2);
+    deleteQueue(theContestHistory);
+    for(int i=0;i<theContest->V;i++){
+        free(theContest->a[i]);
+    }
+    free(theContest->a);
+    free(theContest);
 
 }

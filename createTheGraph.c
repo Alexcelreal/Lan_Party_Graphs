@@ -88,11 +88,5 @@ Graph *generateTheGraph(QueueMatch *Matches, char *output_1, QueueMatch *contest
         fprintf(myfile,"\n");
     }
     fclose(myfile);
-
-    /*for(int i=0;i<theContest->V;i++){
-        free(theContest->a[i]);
-    }
-    free(theContest->a);
-    free(theContest);*/
     return theContest;
 }
