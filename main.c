@@ -17,5 +17,9 @@ int main(int argc, char *argv[]){
 
     //task 1
     QueueMatch *theMatches= createTheQueue(input);
-    generateTheGraph(theMatches,output_1);
+    QueueMatch *theContestHistory=CreateQueue();
+    Graph *theContest= generateTheGraph(theMatches,output_1,theContestHistory);
+
+    //task 2
+
 }

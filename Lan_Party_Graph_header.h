@@ -14,6 +14,7 @@ typedef struct Team{
     int pozition;
     char *teamName;
     float teamScore;
+    float teamPrestige;
 }Team;
 
 typedef struct QueueNode{
@@ -40,9 +41,9 @@ int isEmpty(QueueMatch *Matches);
 void enQueue(QueueMatch *Matchs, Team *theTeam);
 Team *deQueue(QueueMatch *Matchs);
 void deleteQueue(QueueMatch *Match);
-void showTheTable(QueueMatch *Matches, QueueMatch *win, QueueMatch *lost, Graph *theContest);
-void RestoreDate(QueueMatch *win, QueueMatch *lost, QueueMatch **Matches);
-void generateTheGraph(QueueMatch *Matches, char *output_2);
+void showTheTable(QueueMatch *Matches, QueueMatch *win, QueueMatch *contestHistory, Graph *theContest);
+void RestoreData(QueueMatch *win, QueueMatch **Matches);
+Graph *generateTheGraph(QueueMatch *Matches, char *output_1, QueueMatch *contestHistory);
 
 #ifndef TEMA_LAN_PARTY_GRAPHS_LAN_PARTY_GRAPH_HEADER_H
 #define TEMA_LAN_PARTY_GRAPHS_LAN_PARTY_GRAPH_HEADER_H

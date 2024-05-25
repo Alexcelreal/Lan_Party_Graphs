@@ -48,6 +48,7 @@ QueueMatch *createTheQueue(char *input){
         fscanf(readFile,"%[^\n]",name);
         theTeam->teamName=strdup(strtrim(name));
         theTeam->pozition=pozition;
+        theTeam->teamPrestige=0;
         enQueue(theMatches,theTeam);
         teamsNumber--;
         pozition++;
