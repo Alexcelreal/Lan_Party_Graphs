@@ -1,8 +1,8 @@
 #include "Lan_Party_Graph_header.h"
 
-int main(int argc, char *argv[]){
+int main(int argc, char *argv[]) {
 
-    if(argc!=4){
+    if (argc != 4) {
         printf("Invalid data");
         exit(1);
     }
@@ -16,15 +16,15 @@ int main(int argc, char *argv[]){
     printf("Output file 2: %s\n", output_2);
 
     //task 1
-    QueueMatch *theMatches= createTheQueue(input);
-    QueueMatch *theContestHistory=CreateQueue();
-    Graph *theContest= generateTheGraph(theMatches,output_1,theContestHistory);
+    QueueMatch *theMatches = createTheQueue(input);
+    QueueMatch *theContestHistory = CreateQueue();
+    Graph *theContest = generateTheGraph(theMatches, output_1, theContestHistory);
 
     //task 2
-    calculateThePrestige(theContest,theContestHistory);
-    showThePrestige(theContestHistory,output_2);
-    deleteQueue(theContestHistory);
-    for(int i=0;i<theContest->V;i++){
+    calculateThePrestige(theContest, theContestHistory);
+    showThePrestige(theContestHistory, output_2);
+    deleteQueue(theContestHistory); //eliberare memorie graf
+    for (int i = 0; i < theContest->V; i++) {
         free(theContest->a[i]);
     }
     free(theContest->a);

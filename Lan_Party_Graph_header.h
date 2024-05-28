@@ -10,44 +10,55 @@
 
 #define TEAMS_NUMBER 32
 
-typedef struct Team{
+typedef struct Team {
     int pozition;
     char *teamName;
     float teamScore;
     float teamPrestige;
-}Team;
+} Team;
 
-typedef struct QueueNode{
+typedef struct QueueNode {
     Team *data;
     struct QueueNode *next;
-}QueueNode;
+} QueueNode;
 
-typedef struct QueueMatch{
+typedef struct QueueMatch {
     struct QueueNode *Front;
     struct QueueNode *Rear;
-}QueueMatch;
+} QueueMatch;
 
-typedef struct Graph{
+typedef struct Graph {
     int V;
     int E;
     int **a;
-}Graph;
+} Graph;
 
 //task 1
-char *strtrim(char *str);
+char *strtrim(char *string);
+
 QueueMatch *createTheQueue(char *input);
+
 QueueMatch *CreateQueue();
+
 int isEmpty(QueueMatch *Matches);
+
 void enQueue(QueueMatch *Matchs, Team *theTeam);
+
 Team *deQueue(QueueMatch *Matchs);
+
 void deleteQueue(QueueMatch *Match);
-void showTheTable(QueueMatch *Matches, QueueMatch *win, QueueMatch *contestHistory, Graph *theContest);
+
+void TheTable(QueueMatch *Matches, QueueMatch *win, QueueMatch *contestHistory, Graph *theContest);
+
 void RestoreData(QueueMatch *win, QueueMatch **Matches);
+
 Graph *generateTheGraph(QueueMatch *Matches, char *output_1, QueueMatch *contestHistory);
 
 //task2
 float theCalculation(int nrVictory);
+
 void calculateThePrestige(Graph *theContest, QueueMatch *contestHistory);
+
 void showThePrestige(QueueMatch *contestHistory, char *output_2);
 
 #ifndef TEMA_LAN_PARTY_GRAPHS_LAN_PARTY_GRAPH_HEADER_H
